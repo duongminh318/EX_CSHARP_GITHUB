@@ -1,3 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-// mới chuyển được tài liệu chưa làm được bài nào
+﻿
+/*gọi các hàm*/
+using EX1;
+using System.Text;
+
+Console.OutputEncoding = Encoding.UTF8;
+ Console.InputEncoding = Encoding.UTF8;
+var test = new answer();
+test.InputString();
