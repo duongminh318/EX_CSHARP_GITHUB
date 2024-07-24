@@ -93,6 +93,24 @@ namespace EX1
         public void CompareNumber()
         {
             Console.WriteLine("Chương trình so sánh 2 số ");
+            Console.WriteLine("Please enter the first number");
+            int num1;
+            while (!int.TryParse(Console.ReadLine(), out num1))
+            {
+                Console.WriteLine("thím nhập không đúng định dạng nhập lại nhé");
+            }
+            Console.Write(" mời thím nhập số thứ hai: ");
+            int num2;
+            while (!int.TryParse(Console.ReadLine(), out num2) || num2 == 0)
+            {
+                Console.WriteLine("thím nhập không đúng định dạng nhập lại nhé");
+            }
+            if (num1 > num2)
+            {
+                Console.WriteLine($"{num1}>{num2}");
+            }
+            else if (num1 == num2) { Console.WriteLine($"{num1}={num2}"); }
+            else { Console.WriteLine($"{num1}<{num2}"); }
 
         }
 
