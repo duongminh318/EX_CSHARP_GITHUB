@@ -7,4 +7,5 @@ Console.OutputEncoding = Encoding.UTF8;
  Console.InputEncoding = Encoding.UTF8;
 var test = new answer();
 //test.InputString();
-test.CheckEvenAndDiv3Number();
+//test.CheckEvenAndDiv3Number();
+test.Calculator2Number();
