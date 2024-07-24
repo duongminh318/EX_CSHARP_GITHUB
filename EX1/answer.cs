@@ -84,10 +84,19 @@ namespace EX1
             double div = num1 / (double)num2;
             Console.WriteLine($"{num1} /{num2} = {Math.Round(div, 2)}");
         }
-         
+
         #endregion
 
+        #region exercise 1.4
+        /*Bài 1.4: Nhập vào hai số nguyên a, b. So sánh xem số nào lớn hơn, 
+         * số nào nhỏ hơn hay hai số bằng nhau. In kết quả ra màn hình.*/
+        public void CompareNumber()
+        {
+            Console.WriteLine("Chương trình so sánh 2 số ");
 
+        }
+
+        #endregion
 
 
         #region exercise
