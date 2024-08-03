@@ -48,7 +48,7 @@
 
         #endregion
 
-        #region exercise 1.3:
+        #region exercise 1.3
         /*Bài 1.3:
          * Nhập vào hai số nguyên a, b. In ra màn hình kết quả các phép 
          * tính +, -, *, /,%. Lưu ý khi xử lý các phép chia sẽ cần ép kiểu, 
@@ -116,21 +116,19 @@
         public void FindMinOf4Number()
         {
             // khai báo
-            int[] ints = new int[4] {1,2,1,1};
+            int[] ints = new int[4];
             //nhập liệu
-          /*  Console.WriteLine("Find Min Of 4 Number: ");
-            for (int i = 0; i < ints.Length; i++) {
+            Console.WriteLine("Find Min Of 4 Number: ");
+            for (int i = 0; i < ints.Length; i++)
+            {
                 Console.Write($"INPUT FOR NUMBER {i + 1}: ");
-                while( !int.TryParse(Console.ReadLine(), out ints[i]))
+                while (!int.TryParse(Console.ReadLine(), out ints[i]))
                 {
                     Console.WriteLine("incorrect validat, again");
                 }
-               
-            
             }
-*/
 
-            //xử lý
+            //progess
             // 1. kiểm tra xem các phần tử trong mảng có băng nhau
             bool allEqual = true;
             for (int i = 1; i < ints.Length; i++)
@@ -151,15 +149,93 @@
             {
                 //output
                 var min = ints.Min();
-                Console.WriteLine(min);
+                Console.WriteLine("Min of 4 number is: "+min);
+
+            }
+        }
+        #endregion
+
+        #region exercise 1.6
+        /*Bài 1.6: Hãy nhập 4 số nguyên bất kì sau đó lưu vào 4 biến a, b, c, d. 
+         * Tìm giá trị lớn thứ hai trong số chúng, in kết quả ra màn hình. 
+        Trường hợp tất cả cùng giá trị thì không có số lớn thứ hai.*/
+
+        public void FindSecordMaxOf4Number() {
+            // khai báo
+            int[] ints2 = new int[4];
+            //nhập liệu
+            Console.WriteLine("Find Min Of 4 Number: ");
+            for (int i = 0; i < ints2.Length; i++)
+            {
+                Console.Write($"INPUT FOR NUMBER {i + 1}: ");
+                while (!int.TryParse(Console.ReadLine(), out ints2[i]))
+                {
+                    Console.WriteLine("incorrect validat, again");
+                }
+            }
+
+            //progess
+            // 1. kiểm tra xem các phần tử trong mảng có băng nhau
+            bool allEqual = true;
+            for (int i = 1; i < ints2.Length; i++)
+            {
+                // nếu có bất kỳ element nào khác nhau sẽ bật cơ allEqual=flase, thoát luôn vòng lặp
+                if (ints2[i] != ints2[0])
+                {
+                    allEqual = false;
+                    break;
+                }
+            }
+            if (allEqual)
+            {  //output
+                Console.WriteLine("Tất cả các phần tử trong mảng đều bằng nhau.");
+            }
+            //2. find second max
+            else
+            {
+                //output
+                Array.Sort(ints2); //sắp xếp mảng tăng dần
+                 // vị trị kê trót của mảng đã sx --> element lớn thứ 2
+                Console.WriteLine(ints2[ints2.Length-2]); 
 
             }
 
-          
-
         }
 
+        #endregion
 
+        #region exercise 1.7
+        /*Bài 1.7: Viết chương trình nhập vào hai cạnh của hình chữ nhật và tính chu vi và
+        diện tích của hình chữ nhật đó. Hiển thị kết quả lên màn hình.*/
+
+        public void CalRecangle()
+        {
+            // Nhập chiều rộng của hình chữ nhật
+            int width = GetPositiveInteger("Nhập chiều rộng của hình chữ nhật: ");
+
+            // Nhập chiều cao của hình chữ nhật
+            int height = GetPositiveInteger("Nhập chiều cao của hình chữ nhật: ");
+
+            // Tính chu vi và diện tích của hình chữ nhật
+            int chuVi = 2 * (width + height);
+            int dienTich = width * height;
+
+            // Hiển thị kết quả
+            Console.WriteLine("Chu vi = " + chuVi);
+            Console.WriteLine("Diện tích = " + dienTich);
+        }
+
+        // Phương thức để nhập một số nguyên dương
+        static int GetPositiveInteger(string prompt)
+        {
+            int value;
+            Console.WriteLine(prompt);
+            while (!int.TryParse(Console.ReadLine(), out value) || value <= 0)
+            {
+                Console.WriteLine("Giá trị nhập vào phải là số nguyên dương. Vui lòng nhập lại.");
+            }
+            return value;
+        }
         #endregion
 
         #region exercise

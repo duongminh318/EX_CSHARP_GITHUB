@@ -10,4 +10,6 @@ var test = new answer();
 //test.CheckEvenAndDiv3Number();
 //test.Calculator2Number();
 //test.CompareNumber();
-test.FindMinOf4Number();
+//test.FindMinOf4Number();
+//test.FindSecordMaxOf4Number();
+test.CalRecangle();
