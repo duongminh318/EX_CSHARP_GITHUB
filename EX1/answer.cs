@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-
-namespace EX1
+﻿namespace EX1
 {
 
     public class answer
@@ -116,6 +109,58 @@ namespace EX1
 
         #endregion
 
+        #region exercise 1.5
+        /*Bài 1.5: Hãy nhập 4 số nguyên a, b, c, d. 
+         * Tìm giá trị nhỏ nhất trong đó và in ra màn
+        hình. Trong trường hợp 4 số bằng nhau thì in ra: không có số nhỏ nhất.*/
+        public void FindMinOf4Number()
+        {
+            // khai báo
+            int[] ints = new int[4] {1,2,1,1};
+            //nhập liệu
+          /*  Console.WriteLine("Find Min Of 4 Number: ");
+            for (int i = 0; i < ints.Length; i++) {
+                Console.Write($"INPUT FOR NUMBER {i + 1}: ");
+                while( !int.TryParse(Console.ReadLine(), out ints[i]))
+                {
+                    Console.WriteLine("incorrect validat, again");
+                }
+               
+            
+            }
+*/
+
+            //xử lý
+            // 1. kiểm tra xem các phần tử trong mảng có băng nhau
+            bool allEqual = true;
+            for (int i = 1; i < ints.Length; i++)
+            {
+                // nếu có bất kỳ element nào khác nhau sẽ bật cơ allEqual=flase, thoát luôn vòng lặp
+                if (ints[i] != ints[0]) 
+                {
+                    allEqual = false;
+                    break;
+                }
+            }
+            if (allEqual)
+            {  //output
+                Console.WriteLine("Tất cả các phần tử trong mảng đều bằng nhau.");
+            }
+                //2. find min
+            else
+            {
+                //output
+                var min = ints.Min();
+                Console.WriteLine(min);
+
+            }
+
+          
+
+        }
+
+
+        #endregion
 
         #region exercise
         #endregion
