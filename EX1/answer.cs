@@ -1,4 +1,7 @@
-﻿namespace EX1
+﻿using System.Numerics;
+using System.Transactions;
+
+namespace EX1
 {
 
     public class answer
@@ -211,10 +214,10 @@
         public void CalRecangle()
         {
             // Nhập chiều rộng của hình chữ nhật
-            int width = GetPositiveInteger("Nhập chiều rộng của hình chữ nhật: ");
+            int width = GetPositiveInteger("Mời thím Nhập chiều rộng của hình chữ nhật: ");
 
             // Nhập chiều cao của hình chữ nhật
-            int height = GetPositiveInteger("Nhập chiều cao của hình chữ nhật: ");
+            int height = GetPositiveInteger("Mời thím Nhập chiều cao của hình chữ nhật: ");
 
             // Tính chu vi và diện tích của hình chữ nhật
             int chuVi = 2 * (width + height);
@@ -236,6 +239,74 @@
             }
             return value;
         }
+        #endregion
+
+        #region exercise 1.8
+        /*Bài 1.8: Viết chương trình nhập bán kính của hình tròn và tính chu vi, 
+         * diện tích hình  tròn đó.*/
+
+        public void CalCircle()
+        {
+     
+
+            // Nhập chiều cao của hình chữ nhật
+            double round = GetPositiveDouble("Mời thím Nhập bán kính hình tròn: ");
+
+            // Tính chu vi và diện tích của hình tròn
+            double chuVi = (2 * Math.PI*round);
+            double dienTich = Math.PI*Math.Pow(round,2);
+
+            // Hiển thị kết quả
+            Console.WriteLine($"Hình Tròn bán kính {round} có");
+            Console.WriteLine("Chu vi = " + chuVi);
+            Console.WriteLine("Diện tích = " + dienTich);
+        }
+
+        // Phương thức để nhập một số nguyên dương
+        static double GetPositiveDouble(string prompt)
+        {
+            int value;
+            Console.WriteLine(prompt);
+            while (!int.TryParse(Console.ReadLine(), out value) || value <= 0)
+            {
+                Console.WriteLine("Giá trị nhập vào phải là số thực dương. Vui lòng nhập lại.");
+            }
+            return value;
+        }
+
+
+        #endregion
+
+        #region exercise 1.9
+        /*Bài 1.9: Giải và biện luận phương trình bậc nhất a𝑥 + b = 𝟎*/
+        /**/
+        // output
+        public void EquationFirst()
+        {
+            double a = GetInteger("Mời thím nhập vào a= ");
+            double b = GetInteger("Mời thím nhập vào b= ");
+          
+            if (a == 0)
+            {
+                Console.WriteLine("phương trình vô nghiệm= ");
+            }
+            else
+            {
+                Console.WriteLine("phương trình có nghiệm x= "+(-b/a));
+            }
+            //progess
+        }
+        static int GetInteger(string prompt)
+        {
+            int value;
+            Console.WriteLine(prompt);
+            while (!int.TryParse(Console.ReadLine(), out value))
+            {
+                Console.WriteLine("Giá trị nhập vào phải là số . Vui lòng nhập lại.");
+            }
+            return value;
+        }
+
         #endregion
 
         #region exercise

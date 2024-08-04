@@ -12,4 +12,6 @@ var test = new answer();
 //test.CompareNumber();
 //test.FindMinOf4Number();
 //test.FindSecordMaxOf4Number();
-test.CalRecangle();
+//test.CalRecangle();
+//test.CalCircle();
+test.EquationFirst();
