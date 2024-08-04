@@ -279,8 +279,8 @@ namespace EX1
         // output
         public void EquationFirst()
         {
-            double a = GetInteger("Mời thím nhập vào a= ");
-            double b = GetInteger("Mời thím nhập vào b= ");
+            double a = GetDouble("Mời thím nhập vào a= ");
+            double b = GetDouble("Mời thím nhập vào b= ");
           
             if (a == 0)
             {
@@ -288,21 +288,57 @@ namespace EX1
             }
             else
             {
-                Console.WriteLine("phương trình có nghiệm x= "+(-b/a));
+                Console.WriteLine("phương trình có nghiệm x= "+Math.Round((-b/a),2));
             }
             //progess
         }
-        static int GetInteger(string prompt)
+        static double GetDouble(string prompt)
         {
-            int value;
+            double value;
             Console.WriteLine(prompt);
-            while (!int.TryParse(Console.ReadLine(), out value))
+            while (!double.TryParse(Console.ReadLine(), out value))
             {
                 Console.WriteLine("Giá trị nhập vào phải là số . Vui lòng nhập lại.");
             }
             return value;
         }
 
+        #endregion
+
+        #region exercise 1.10
+        /*Bài 1.10: Giải và biện luận phương trình bậc 2 a𝑥2 + b𝑥1 + c = 𝟎*/
+        public void EquationSercord()
+        {
+            double a = GetDouble("Mời thím nhập vào a= ");
+            double b = GetDouble("Mời thím nhập vào b= ");
+            double c = GetDouble("Mời thím nhập vào c= ");
+            double x1, x2;
+            if (a == 0)
+            {
+                Console.WriteLine("phương trình có nghiệm x= " + Math.Round((-c / b), 2));
+            }
+            else
+            {
+                double delta = Math.Pow(b, 2) - (4 * a * c);
+                if (delta > 0)
+                {
+                    x1 = (-b + Math.Sqrt(delta)) / (2* a );
+                    x2 = (-b - Math.Sqrt(delta)) / (2 * a );
+                    Console.WriteLine($"PT có 2 nghiệp phân biệt x1= {x1} ; x2={x2}");
+                }else if (delta == 0)
+                {
+                    x1 = x2 = (-b) / (2 * a);
+                    Console.WriteLine("PT có 1 nghiệm kép x1 = x2 = "+x1);
+                }
+                else
+                {
+                    Console.WriteLine("PT không có nghiệm thực ");
+                }
+            }
+
+            //progess
+        }
+     
         #endregion
 
         #region exercise

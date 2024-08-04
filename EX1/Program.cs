@@ -14,4 +14,5 @@ var test = new answer();
 //test.FindSecordMaxOf4Number();
 //test.CalRecangle();
 //test.CalCircle();
-test.EquationFirst();
+//test.EquationFirst();
+test.EquationSercord();
