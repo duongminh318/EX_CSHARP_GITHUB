@@ -247,8 +247,6 @@ namespace EX1
 
         public void CalCircle()
         {
-     
-
             // Nhập chiều cao của hình chữ nhật
             double round = GetPositiveDouble("Mời thím Nhập bán kính hình tròn: ");
 
@@ -273,8 +271,6 @@ namespace EX1
             }
             return value;
         }
-
-
         #endregion
 
         #region exercise 1.9
