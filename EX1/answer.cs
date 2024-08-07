@@ -66,7 +66,7 @@ namespace EX1
             while (!int.TryParse(Console.ReadLine(), out num1))
             {
                 Console.WriteLine("thím nhập không đúng định dạng nhập lại nhé");
-            }     
+            }
             Console.Write(" mời thím nhập số thứ hai: ");
             int num2;
             while (!int.TryParse(Console.ReadLine(), out num2) || num2 == 0)
@@ -74,7 +74,7 @@ namespace EX1
                 Console.WriteLine("thím nhập không đúng định dạng nhập lại nhé");
             }
             //output
-            Console.WriteLine($"{num1} +{num2} = {num1+num2}");
+            Console.WriteLine($"{num1} +{num2} = {num1 + num2}");
             Console.WriteLine($"{num1} -{num2} = {num1 - num2}");
             Console.WriteLine($"{num1} *{num2} = {num1 * num2}");
             double div = num1 / (double)num2;
@@ -137,7 +137,7 @@ namespace EX1
             for (int i = 1; i < ints.Length; i++)
             {
                 // nếu có bất kỳ element nào khác nhau sẽ bật cơ allEqual=flase, thoát luôn vòng lặp
-                if (ints[i] != ints[0]) 
+                if (ints[i] != ints[0])
                 {
                     allEqual = false;
                     break;
@@ -147,12 +147,12 @@ namespace EX1
             {  //output
                 Console.WriteLine("Tất cả các phần tử trong mảng đều bằng nhau.");
             }
-                //2. find min
+            //2. find min
             else
             {
                 //output
                 var min = ints.Min();
-                Console.WriteLine("Min of 4 number is: "+min);
+                Console.WriteLine("Min of 4 number is: " + min);
 
             }
         }
@@ -163,7 +163,8 @@ namespace EX1
          * Tìm giá trị lớn thứ hai trong số chúng, in kết quả ra màn hình. 
         Trường hợp tất cả cùng giá trị thì không có số lớn thứ hai.*/
 
-        public void FindSecordMaxOf4Number() {
+        public void FindSecordMaxOf4Number()
+        {
             // khai báo
             int[] ints2 = new int[4];
             //nhập liệu
@@ -198,8 +199,8 @@ namespace EX1
             {
                 //output
                 Array.Sort(ints2); //sắp xếp mảng tăng dần
-                 // vị trị kê trót của mảng đã sx --> element lớn thứ 2
-                Console.WriteLine(ints2[ints2.Length-2]); 
+                                   // vị trị kê trót của mảng đã sx --> element lớn thứ 2
+                Console.WriteLine(ints2[ints2.Length - 2]);
 
             }
 
@@ -251,8 +252,8 @@ namespace EX1
             double round = GetPositiveDouble("Mời thím Nhập bán kính hình tròn: ");
 
             // Tính chu vi và diện tích của hình tròn
-            double chuVi = (2 * Math.PI*round);
-            double dienTich = Math.PI*Math.Pow(round,2);
+            double chuVi = (2 * Math.PI * round);
+            double dienTich = Math.PI * Math.Pow(round, 2);
 
             // Hiển thị kết quả
             Console.WriteLine($"Hình Tròn bán kính {round} có");
@@ -281,14 +282,14 @@ namespace EX1
         {
             double a = GetDouble("Mời thím nhập vào a= ");
             double b = GetDouble("Mời thím nhập vào b= ");
-          
+
             if (a == 0)
             {
                 Console.WriteLine("phương trình vô nghiệm= ");
             }
             else
             {
-                Console.WriteLine("phương trình có nghiệm x= "+Math.Round((-b/a),2));
+                Console.WriteLine("phương trình có nghiệm x= " + Math.Round((-b / a), 2));
             }
             //progess
         }
@@ -322,13 +323,14 @@ namespace EX1
                 double delta = Math.Pow(b, 2) - (4 * a * c);
                 if (delta > 0)
                 {
-                    x1 = (-b + Math.Sqrt(delta)) / (2* a );
-                    x2 = (-b - Math.Sqrt(delta)) / (2 * a );
+                    x1 = (-b + Math.Sqrt(delta)) / (2 * a);
+                    x2 = (-b - Math.Sqrt(delta)) / (2 * a);
                     Console.WriteLine($"PT có 2 nghiệp phân biệt x1= {x1} ; x2={x2}");
-                }else if (delta == 0)
+                }
+                else if (delta == 0)
                 {
                     x1 = x2 = (-b) / (2 * a);
-                    Console.WriteLine("PT có 1 nghiệm kép x1 = x2 = "+x1);
+                    Console.WriteLine("PT có 1 nghiệm kép x1 = x2 = " + x1);
                 }
                 else
                 {
@@ -338,7 +340,60 @@ namespace EX1
 
             //progess
         }
-     
+
+        #endregion
+        /*
+                public static double Input()
+                {
+                    Console.WriteLine("input value");
+                    double value = Console.ReadLine();
+                    return value;
+                }*/
+
+        #region exercise 1.11
+        /*Bài 1.11: Nhập vào ba số thực a, b, c đều dương. 
+         * Kiểm tra xem đó có phải là ba cạnh
+        của một tam giác hay không. 
+        Nếu có hãy chỉ ra đó là loại tam giác nào?*/
+        public void CheckTriangle()
+        {
+            double a = GetDouble("mời thím nhập vào số cạnh a");
+            double b = GetDouble("mời thím nhập vào số cạnh b");
+            double c = GetDouble("mời thím nhập vào số cạnh c");
+            if (a + b > c && b + c > a && c + a > b)
+            {
+                // deu:
+                if (a == b && b == c)
+                {
+                    Console.WriteLine("Tam giac deu");
+                }
+                else if (a == b || a == c || c == b)
+                {
+                    if ((a * a + b * b == c * c) || (a * a + c * c == b * b) || (a * a == b * b + c * c))
+                    {
+                        Console.WriteLine("Tam giac vuong can");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tam giac can");
+                    }
+                }
+                else if ((a * a + b * b == c * c) || (a * a + c * c == b * b) || (a * a == b * b + c * c))
+                {
+                    Console.WriteLine("Tam giac vuong");
+                }
+                else
+                {
+                    Console.WriteLine("Tam giac thuong");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ba canh tren khong lap thanh tam giac");
+            }
+        }
+
+
         #endregion
 
         #region exercise

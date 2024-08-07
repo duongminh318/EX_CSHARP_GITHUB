@@ -15,4 +15,5 @@ var test = new answer();
 //test.CalRecangle();
 //test.CalCircle();
 //test.EquationFirst();
-test.EquationSercord();
+/*test.EquationSercord();*/
+test.CheckTriangle();
