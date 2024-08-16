@@ -9,4 +9,11 @@ var test = new answer();
 //test.InputString();
 //test.CheckEvenAndDiv3Number();
 //test.Calculator2Number();
-test.CompareNumber();
+//test.CompareNumber();
+//test.FindMinOf4Number();
+//test.FindSecordMaxOf4Number();
+//test.CalRecangle();
+//test.CalCircle();
+//test.EquationFirst();
+/*test.EquationSercord();*/
+test.CheckTriangle();

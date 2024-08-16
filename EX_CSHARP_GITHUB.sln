@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EX1", "EX1\EX1.csproj", "{F6C06247-A508-4A1E-B020-A515F193C7A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EX1", "EX1\EX1.csproj", "{F6C06247-A508-4A1E-B020-A515F193C7A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lirary_Manager", "EX_Collection\OOP\Lirary_Manager\Lirary_Manager.csproj", "{4A508F19-2653-40DD-993F-92C338E5C5B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OOP", "OOP", "{20C55D2E-2A69-491C-BB1B-00B3D243CC1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{F6C06247-A508-4A1E-B020-A515F193C7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6C06247-A508-4A1E-B020-A515F193C7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6C06247-A508-4A1E-B020-A515F193C7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A508F19-2653-40DD-993F-92C338E5C5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A508F19-2653-40DD-993F-92C338E5C5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A508F19-2653-40DD-993F-92C338E5C5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A508F19-2653-40DD-993F-92C338E5C5B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A508F19-2653-40DD-993F-92C338E5C5B6} = {20C55D2E-2A69-491C-BB1B-00B3D243CC1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2672CF83-1125-4974-807B-8ECDFB83505D}
